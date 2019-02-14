@@ -13,7 +13,7 @@ services:
     hostname: kafka
     environment:
       # KAFKA_CREATE_TOPICS: "UploadFile:1:1,GetFile:1:1,TrackUpload:1:1,GetEmailContent:1:1" # topic:partition:replicas
-      KAFKA_ADVERTISED_HOST_NAME:  # docker-machine ip (MESMA DO .env "DOCKER_IP")
+      KAFKA_ADVERTISED_HOST_NAME: ${DOCKER_IP} # docker-machine ip (MESMA DO .env "DOCKER_IP")
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_ADVERTISED_PORT: 9092
     volumes:
